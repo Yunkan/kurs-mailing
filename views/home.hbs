@@ -1,0 +1,47 @@
+<div class="container d-flex justify-content-center p-4 mt-3 border rounded">
+    <form action="/send" method="post" class="w-100" enctype="multipart/form-data">
+        <h1>Email рассылка</h1>
+
+        <div class="row d-flex align-items-center">
+            <div class="col">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="radioEmail" id="radioEmailText" checked>
+                    <label class="form-check-label" for="radioEmailText">Вручную</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="radioEmail" id="radioEmailFile">
+                    <label class="form-check-label" for="radioEmailFile">Файл(.txt, .xlsx)</label>
+                </div>
+            </div>
+            <div class="col" id="emailBlock">
+                
+            </div>
+        </div>        
+
+        <div class="form-group mt-3">
+            <label for="subject">Тема:</label>
+            <input type="text" class="form-control" id="subject" name="subject" required>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="radioMessage" id="radioMessageText" checked>
+            <label class="form-check-label" for="radioMessageText">Текст</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="radioMessage" id="radioMessageFile">
+            <label class="form-check-label" for="radioMessageFile">Файл(.html, стили и скрипты должны быть в одном файле.)</label>
+        </div>
+
+        <div class="row">
+            <div class="col" id="messageBlock">
+                
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary m-3">Отправить</button>
+
+        <p class="text-danger">
+            {{ error }}
+        </p>
+    </form>
+</div>
