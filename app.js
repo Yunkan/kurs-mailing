@@ -114,6 +114,13 @@ app.post('/send', upload.fields([{ name: 'to' }, { name: 'html' }]), (req, res) 
 	
 });
 
-app.listen(5000, () => {
-	console.log('Server has been started at port 5000...');
-});
+if(!module.parent){
+	app.listen(5000, () => {
+		console.log('Server has been started at port 5000...');
+	});
+}
+
+module.exports = {
+	validateEmail,
+	startMailing
+}
